@@ -30,6 +30,8 @@ brief overview of them:
 
 ## Code Style
 
+### Formatting
+
 We use [Black](https://black.readthedocs.io/en/stable/) to automatically format code according
 to [PEP8](https://peps.python.org/pep-0008/). For imports ordering we use [isort](https://pycqa.github.io/isort/). Both
 tools are configured in `pyproject.toml` to be compatible with each other.
@@ -40,3 +42,29 @@ To disable formatting for a specific line of code, append `# fmt: skip`
 for [Black](https://black.readthedocs.io/en/stable/) or `# isort: skip` for [isort](https://pycqa.github.io/isort/).
 These comments tell the formatters to skip the respective lines. If you want to combine them both into one line,
 separate them with a semicolon: `# fmt: skip; isort: skip`.
+
+### Linting
+
+[Flake8](https://flake8.pycqa.org/en/latest/) is used as the main liner. Its configuration is stored in `pyproject.toml`
+using the [Flake8-pyproject](https://pypi.org/project/Flake8-pyproject/) plugin that allows you to do this. Of course,
+we use additional plugins to make this tool even more powerful. Here's a brief overview of them:
+
+- [flake8-builtins](https://pypi.org/project/flake8-builtins/) - ensures that variables do not overwrite builtins.
+- [pep8-naming](https://pypi.org/project/pep8-naming/) - ensures that [PEP8](https://peps.python.org/pep-0008/) naming
+  conventions aren't violated.
+- [flake8-bugbear](https://pypi.org/project/flake8-bugbear/) - prevents possible bugs and problems.
+
+You can find other
+plugins [here](https://github.com/DmytroLitvinov/awesome-flake8-extensions?tab=readme-ov-file#all-in-one), and if you
+find them useful, try integrating them into the project.
+
+We also use [MyPy](https://mypy.readthedocs.io/en/stable/) for static types analysis
+and [Bandit](https://bandit.readthedocs.io/en/latest/) for static security analysis. Their configurations you too
+can find in `pyproject.toml`.
+
+To run all of them at the same time and in the correct order, you can use the `lint` command from the `Makefile`.
+
+For them, you can also disable checks of specific lines using special comments: use `# noqa` for
+[Flake8](https://flake8.pycqa.org/en/latest/), `# type: ignore` for [MyPy](https://mypy.readthedocs.io/en/stable/),
+and `# nosec` for [Bandit](https://bandit.readthedocs.io/en/latest/). Add these at the end of the line you want the tool
+to ignore.

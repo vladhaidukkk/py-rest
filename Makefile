@@ -9,8 +9,8 @@ sync-dev:
 	@pip-sync requirements-dev.txt
 
 fmt:
-	@isort .
-	@black .
+	@isort app
+	@black app
 
 lint:
 	@mypy app

@@ -4,6 +4,8 @@
 #
 #    pip-compile --extra=dev --output-file=requirements-dev.txt
 #
+attrs==23.2.0
+    # via flake8-bugbear
 bandit==1.7.8
     # via py-soap (pyproject.toml)
 black==24.3.0
@@ -12,8 +14,15 @@ click==8.1.7
     # via black
 flake8==7.0.0
     # via
+    #   flake8-bugbear
+    #   flake8-builtins
     #   flake8-pyproject
+    #   pep8-naming
     #   py-soap (pyproject.toml)
+flake8-bugbear==24.2.6
+    # via py-soap (pyproject.toml)
+flake8-builtins==2.3.0
+    # via py-soap (pyproject.toml)
 flake8-pyproject==1.2.3
     # via py-soap (pyproject.toml)
 isort==5.13.2
@@ -36,6 +45,8 @@ pathspec==0.12.1
     # via black
 pbr==6.0.0
     # via stevedore
+pep8-naming==0.13.3
+    # via py-soap (pyproject.toml)
 platformdirs==4.2.0
     # via black
 pycodestyle==2.11.1
