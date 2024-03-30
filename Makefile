@@ -7,3 +7,7 @@ sync:
 
 sync-dev:
 	@pip-sync requirements-dev.txt
+
+fmt:
+	@isort app
+	@black app

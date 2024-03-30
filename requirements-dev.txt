@@ -4,3 +4,17 @@
 #
 #    pip-compile --extra=dev --output-file=requirements-dev.txt
 #
+black==24.3.0
+    # via py-soap (pyproject.toml)
+click==8.1.7
+    # via black
+isort==5.13.2
+    # via py-soap (pyproject.toml)
+mypy-extensions==1.0.0
+    # via black
+packaging==24.0
+    # via black
+pathspec==0.12.1
+    # via black
+platformdirs==4.2.0
+    # via black

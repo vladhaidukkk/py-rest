@@ -8,4 +8,10 @@ version = "0.0.1"
 dependencies = []
 
 [project.optional-dependencies]
-dev = []
+dev = ["black", "isort"]
+
+[tool.isort]
+profile = "black"
+
+[tool.black]
+line-length = 88
