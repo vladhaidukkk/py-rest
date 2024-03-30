@@ -10,10 +10,18 @@ black==24.3.0
     # via py-soap (pyproject.toml)
 click==8.1.7
     # via black
+flake8==7.0.0
+    # via
+    #   flake8-pyproject
+    #   py-soap (pyproject.toml)
+flake8-pyproject==1.2.3
+    # via py-soap (pyproject.toml)
 isort==5.13.2
     # via py-soap (pyproject.toml)
 markdown-it-py==3.0.0
     # via rich
+mccabe==0.7.0
+    # via flake8
 mdurl==0.1.2
     # via markdown-it-py
 mypy==1.9.0
@@ -30,6 +38,10 @@ pbr==6.0.0
     # via stevedore
 platformdirs==4.2.0
     # via black
+pycodestyle==2.11.1
+    # via flake8
+pyflakes==3.2.0
+    # via flake8
 pygments==2.17.2
     # via rich
 pyyaml==6.0.1

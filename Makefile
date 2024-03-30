@@ -14,4 +14,5 @@ fmt:
 
 lint:
 	@mypy app
+	@flake8 app
 	@bandit -c pyproject.toml --silent -r app
