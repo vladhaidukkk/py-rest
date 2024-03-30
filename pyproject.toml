@@ -8,10 +8,13 @@ version = "0.0.1"
 dependencies = []
 
 [project.optional-dependencies]
-dev = ["black", "isort"]
+dev = ["black", "isort", "mypy"]
 
 [tool.isort]
 profile = "black"
 
 [tool.black]
 line-length = 88
+
+[tool.mypy]
+strict = true

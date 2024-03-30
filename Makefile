@@ -11,3 +11,6 @@ sync-dev:
 fmt:
 	@isort app
 	@black app
+
+lint:
+	@mypy app
