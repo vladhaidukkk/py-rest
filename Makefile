@@ -14,3 +14,4 @@ fmt:
 
 lint:
 	@mypy app
+	@bandit -c pyproject.toml --silent -r app
