@@ -43,6 +43,9 @@ for [Black](https://black.readthedocs.io/en/stable/) or `# isort: skip` for [iso
 These comments tell the formatters to skip the respective lines. If you want to combine them both into one line,
 separate them with a semicolon: `# fmt: skip; isort: skip`.
 
+> **Important:** Always remember to exclude folders/files that do not require formatting. Run the formatter in verbose
+> mode to see what it formats.
+
 ### Linting
 
 [Flake8](https://flake8.pycqa.org/en/latest/) is used as the main liner. Its configuration is stored in `pyproject.toml`
@@ -68,3 +71,6 @@ For them, you can also disable checks of specific lines using special comments: 
 [Flake8](https://flake8.pycqa.org/en/latest/), `# type: ignore` for [MyPy](https://mypy.readthedocs.io/en/stable/),
 and `# nosec` for [Bandit](https://bandit.readthedocs.io/en/latest/). Add these at the end of the line you want the tool
 to ignore.
+
+> **Important:** Always remember to exclude folders/files that do not require linting. Run the linter in verbose
+> mode to see what it lints.
