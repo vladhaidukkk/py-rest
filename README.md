@@ -2,6 +2,20 @@
 
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
 
+## Table of Contents
+
+- [Packages Management](#packages-management)
+    - [Add a New Dependency](#add-a-new-dependency)
+    - [Keep Track of Dependencies](#keep-track-of-dependencies)
+- [Code Style](#code-style)
+    - [Formatting](#formatting)
+    - [Linting](#linting)
+- [Git Hooks](#git-hooks)
+    - [Getting Started](#getting-started)
+    - [Configuration](#configuration)
+    - [Updating Configuration](#updating-configuration)
+    - [Testing Configuration](#testing-configuration)
+
 ## Packages Management
 
 We use two types of software packages: ones needed for the software to work, and ones that make it easier to build the
