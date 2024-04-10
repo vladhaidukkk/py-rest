@@ -10,8 +10,14 @@ bandit==1.7.8
     # via py-soap (pyproject.toml)
 black==24.3.0
     # via py-soap (pyproject.toml)
+cfgv==3.4.0
+    # via pre-commit
 click==8.1.7
     # via black
+distlib==0.3.8
+    # via virtualenv
+filelock==3.13.4
+    # via virtualenv
 flake8==7.0.0
     # via
     #   flake8-bugbear
@@ -21,10 +27,12 @@ flake8==7.0.0
     #   py-soap (pyproject.toml)
 flake8-bugbear==24.2.6
     # via py-soap (pyproject.toml)
-flake8-builtins==2.3.0
+flake8-builtins==2.5.0
     # via py-soap (pyproject.toml)
 flake8-pyproject==1.2.3
     # via py-soap (pyproject.toml)
+identify==2.5.35
+    # via pre-commit
 isort==5.13.2
     # via py-soap (pyproject.toml)
 markdown-it-py==3.0.0
@@ -39,6 +47,8 @@ mypy-extensions==1.0.0
     # via
     #   black
     #   mypy
+nodeenv==1.8.0
+    # via pre-commit
 packaging==24.0
     # via black
 pathspec==0.12.1
@@ -48,7 +58,11 @@ pbr==6.0.0
 pep8-naming==0.13.3
     # via py-soap (pyproject.toml)
 platformdirs==4.2.0
-    # via black
+    # via
+    #   black
+    #   virtualenv
+pre-commit==3.7.0
+    # via py-soap (pyproject.toml)
 pycodestyle==2.11.1
     # via flake8
 pyflakes==3.2.0
@@ -56,10 +70,17 @@ pyflakes==3.2.0
 pygments==2.17.2
     # via rich
 pyyaml==6.0.1
-    # via bandit
+    # via
+    #   bandit
+    #   pre-commit
 rich==13.7.1
     # via bandit
 stevedore==5.2.0
     # via bandit
-typing-extensions==4.10.0
+typing-extensions==4.11.0
     # via mypy
+virtualenv==20.25.1
+    # via pre-commit
+
+# The following packages are considered to be unsafe in a requirements file:
+# setuptools

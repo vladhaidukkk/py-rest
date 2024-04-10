@@ -18,6 +18,7 @@ dev = [
     "pep8-naming",
     "flake8-bugbear",
     "bandit",
+    "pre-commit",
 ]
 
 [tool.isort]
