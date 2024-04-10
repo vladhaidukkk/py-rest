@@ -1,5 +1,7 @@
 # SOAP API example with Python
 
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
+
 ## Packages Management
 
 We use two types of software packages: ones needed for the software to work, and ones that make it easier to build the
@@ -74,3 +76,71 @@ to ignore.
 
 > **Important:** Always remember to exclude folders/files that do not require linting. Run the linter in verbose
 > mode to see what it lints.
+
+## Git Hooks
+
+We use [pre-commit](https://pre-commit.com) to set up our git hooks. Right now, we only use `pre-commit` hook for
+checking our code’s style before someone commits it. This makes our code reviews easier because we don’t have to worry
+about style issues.
+
+### Getting Started
+
+To set up git hooks locally, you just need to run this command:
+
+```shell
+pre-commit install
+```
+
+If for some reason you need to remove all git hooks from the `.git/hooks` directory, run this command:
+
+```shell
+pre-commit uninstall
+```
+
+> **Important:** Don't forget to set it up locally as it is a prerequisite. Just do it once and forget about it.
+
+### Configuration
+
+[Pre-commit](https://pre-commit.com) framework helps us easily manage and maintain git hooks. It works with many
+programming languages, but we mainly use it for Python, which is what it was initially created for.
+
+Our configuration is in the `.pre-commit-config.yaml` file. We are currently
+using [local hooks](https://pre-commit.com/#repository-local-hooks), but the real power
+of [pre-commit](https://pre-commit.com) is being able to use tools without having to install them on your computer. To
+understand more about this, take a look at
+this [guide](https://pre-commit.com/#adding-pre-commit-plugins-to-your-project). Also, check out the full list of
+available third-party repos with hooks [here](https://pre-commit.com/hooks.html).
+
+### Updating Configuration
+
+After updating the configuration you can check if it's valid with this command:
+
+```shell
+pre-commit validate-config
+```
+
+To update third-party repos with hooks to the latest versions, run this command:
+
+```shell
+pre-commit autoupdate
+```
+
+And to update a specific one:
+
+```shell
+pre-commit autoupdate --repo <repo>
+```
+
+### Testing Configuration
+
+You don't need to do a silly commit just to check if the `pre-commi`' hook works. Instead, you can test all hooks with:
+
+```shell
+pre-commit run --all_files
+```
+
+Or test a specific hook by specifying its id:
+
+```shell
+pre-commit run <hook_id> --all_files
+```
