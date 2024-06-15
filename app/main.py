@@ -1,6 +1,7 @@
-def add(a: int, b: int) -> int:
-    return a + b
+import uvicorn
+from fastapi import FastAPI
 
+app = FastAPI()
 
-result = add(1, 2)
-print(f"result = {result}")
+if __name__ == "__main__":
+    uvicorn.run("app.main:app", reload=True)
