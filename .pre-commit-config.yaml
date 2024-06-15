@@ -1,37 +1,23 @@
 repos:
   - repo: local
     hooks:
-      - id: isort
-        name: isort
-        entry: isort --check app
-        language: system
-        types: [ python ]
-        stages: [ pre-commit ]
-
-      - id: black
-        name: black
-        entry: black --check app
+      - id: ruff-formatter
+        name: ruff-formatter
+        entry: ruff format --check
         language: system
         types: [ python ]
         stages: [ pre-commit ]
 
       - id: mypy
         name: mypy
-        entry: mypy app
+        entry: mypy
         language: system
         types: [ python ]
         stages: [ pre-commit ]
 
-      - id: flake8
-        name: flake8
-        entry: flake8 app
-        language: system
-        types: [ python ]
-        stages: [ pre-commit ]
-
-      - id: bandit
-        name: bandit
-        entry: bandit -c pyproject.toml --silent -r app
+      - id: ruff-linter
+        name: ruff-linter
+        entry: ruff check
         language: system
         types: [ python ]
         stages: [ pre-commit ]
