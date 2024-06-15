@@ -9,30 +9,19 @@ pydantic = { extras = ["email"], version = "^2.7.4" }
 pydantic-settings = "^2.3.3"
 
 [tool.poetry.group.dev.dependencies]
-isort = "^5.13.2"
-black = "^24.4.2"
 mypy = "^1.10.0"
-flake8 = "^7.0.0"
-flake8-pyproject = "^1.2.3"
-flake8-builtins = "^2.5.0"
-pep8-naming = "^0.14.1"
-flake8-bugbear = "^24.4.26"
-bandit = "^1.7.9"
+ruff = "^0.4.9"
 pre-commit = "^3.7.1"
-
-[tool.isort]
-profile = "black"
-
-[tool.black]
-line-length = 88
 
 [tool.mypy]
 strict = true
 
-[tool.flake8]
-max-line-length = 88
-max-complexity = 8
-ignore = []
+[tool.ruff]
+line-length = 88
+show-fixes = true
 
-[tool.bandit]
-skips = []
+[tool.ruff.lint]
+select = ["F", "E", "W", "C90", "I", "N", "S", "B", "A"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 5
