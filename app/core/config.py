@@ -42,7 +42,11 @@ class Settings(BaseSettings):
     api: ApiConfig = ApiConfig()
     db: DatabaseConfig
 
-    model_config = SettingsConfigDict(env_file=".env", env_nested_delimiter="__")
+    model_config = SettingsConfigDict(
+        env_prefix="APP__",
+        env_nested_delimiter="__",
+        extra="ignore",
+    )
 
 
-settings = Settings()  # type: ignore[call-arg]
+settings = Settings(_env_file=(".env.example", ".env"))  # type: ignore[call-arg]
