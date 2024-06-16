@@ -1,4 +1,5 @@
 from contextlib import asynccontextmanager
+from typing import AsyncGenerator
 
 import uvicorn
 from fastapi import FastAPI
@@ -9,7 +10,7 @@ from app.core.db import db_helper
 
 
 @asynccontextmanager
-async def lifespan(_app: FastAPI):
+async def lifespan(_app: FastAPI) -> AsyncGenerator[None, None]:
     yield
     await db_helper.dispose()
 
