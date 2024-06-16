@@ -8,8 +8,14 @@ class RunConfig(BaseModel):
     reload: bool = True
 
 
+class ApiV1Config(BaseModel):
+    prefix: str = "/v1"
+    users: str = "/users"
+
+
 class ApiConfig(BaseModel):
     prefix: str = "/api"
+    v1: ApiV1Config = ApiV1Config()
 
 
 class DatabaseConfig(BaseModel):
